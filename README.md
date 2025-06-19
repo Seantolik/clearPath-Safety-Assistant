@@ -23,3 +23,10 @@ Visit the live assistant and try asking:
 ---
 
 This app is under development by ClearPath Safety Solutions.
+# All Rights Reserved
+
+This code is proprietary and the intellectual property of ClearPath Safety Solutions.
+
+It is provided for demonstration and evaluation purposes only, through the publicly deployed Streamlit application.
+
+Redistribution, commercial use, or reuse of the source code without written permission is strictly prohibited.
