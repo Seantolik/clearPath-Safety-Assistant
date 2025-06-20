@@ -1,15 +1,18 @@
 import streamlit as st
 import openai
 
-# Initialize OpenAI client using your secret API key
+# Initialize OpenAI client
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # --- Streamlit Page Setup ---
-st.set_page_config(page_title="ClearPath Safety Assistant", layout="wide")
-st.title("🛡️ ClearPath Safety Assistant")
+st.set_page_config(page_title="ClearPath Safety Assistant [BETA]", layout="wide")
+st.markdown(
+    "<h1 style='color:#1D3557;'>🛡️ ClearPath Safety Assistant <span style='color:#2A9D8F;'>[BETA]</span></h1>",
+    unsafe_allow_html=True
+)
 
 # --- Role Selection ---
-mode = st.radio("Choose your role:", ["Client (Simple Answers)", "Consultant (Expert Tools)"])
+mode = st.radio("Choose your role:", ["Client (Simple Answers)", "Consultant (Expert Tools)"], horizontal=True)
 
 # --- User Input ---
 user_input = st.text_area("Enter your safety question or task:")
@@ -30,7 +33,6 @@ if st.button("Get Answer") and user_input:
             )
 
         try:
-            # Generate response using GPT
             chat_response = client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
@@ -40,7 +42,6 @@ if st.button("Get Answer") and user_input:
                 temperature=0.7
             )
 
-            # Display the response
             st.success("✅ Response:")
             st.write(chat_response.choices[0].message.content)
 

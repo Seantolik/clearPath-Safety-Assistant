@@ -1,0 +1,5 @@
+[theme]
+primaryColor = "#457B9D"        # Blue (role selector, buttons)
+secondaryBackgroundColor = "#E8F5E9"  # Light green (input box area)
+textColor = "#1D3557"
+font = "sans serif"
